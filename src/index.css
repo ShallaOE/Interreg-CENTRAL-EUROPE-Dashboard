@@ -1,0 +1,125 @@
+/* ══════════════════════════════════════════════════════════
+   OE Design System 2.0 — Civqa/Data Room reference tokens
+   ══════════════════════════════════════════════════════════ */
+
+:root {
+  --font:         'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', sans-serif;
+  --font-mono:    'Atkinson Hyperlegible Mono', monospace;
+
+  /* Brand violet */
+  --violet:        #5B4FCF;
+  --violet-dark:   #3D2B8E;
+  --violet-mid:    #7B6FE8;
+  --violet-light:  #EEF0FD;
+  --violet-border: #C5BFEE;
+
+  /* Surfaces */
+  --bg:          #F5F4F0;
+  --surface:     #FFFFFF;
+  --surface-2:   #FAFAF8;
+
+  /* Text */
+  --text:        #111110;
+  --text-2:      rgba(17,17,16,0.55);
+  --text-3:      rgba(17,17,16,0.35);
+
+  /* Borders */
+  --border:      rgba(17,17,16,0.08);
+  --border-md:   rgba(17,17,16,0.15);
+
+  /* Status */
+  --green:    #15803D; --green-bg:  #DCFCE7;
+  --red:      #B91C1C; --red-bg:    #FEE2E2;
+  --amber:    #B45309; --amber-bg:  #FEF3C7;
+
+  /* Shadows from ds-tokens */
+  --shadow-s: 0px 4px  4px  0px rgba(0,0,0,0.10);
+  --shadow-m: 0px 8px  16px 0px rgba(0,0,0,0.12);
+  --shadow-l: 0px 16px 48px 0px rgba(0,0,0,0.15);
+
+  /* Radii */
+  --r-s: 4px; --r-m: 8px; --r-l: 12px; --r-xl: 16px;
+
+  /* Type scale from ds-tokens */
+  --size-h1: 32px; --size-h2: 28px; --size-h3: 24px;
+  --size-h4: 20px; --size-h5: 18px; --size-h6: 16px;
+  --size-body-l: 18px; --size-body-m: 16px; --size-body-s: 14px;
+  --size-caption: 12px;
+
+  /* Layout */
+  --sidebar-w:  220px;
+  --topnav-h:   52px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font-family: var(--font); cursor: pointer; border: none; background: none; }
+input, select { font-family: var(--font); }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 3px; }
+
+/* ── Utilities ── */
+.section-header {
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid var(--violet);
+  margin-bottom: 20px;
+}
+.section-title {
+  font-size: var(--size-h4);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.btn-primary {
+  background: var(--violet); color: white;
+  font-size: 13px; font-weight: 600;
+  padding: 8px 18px; border-radius: var(--r-m);
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--violet-mid); }
+
+.btn-outline {
+  background: transparent; color: var(--violet);
+  border: 1.5px solid var(--violet);
+  font-size: 13px; font-weight: 600;
+  padding: 7px 16px; border-radius: var(--r-m);
+  transition: all 0.15s;
+}
+.btn-outline:hover { background: var(--violet-light); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-l);
+  box-shadow: var(--shadow-s);
+}
+
+/* Tab pill group — Civqa "Grafico / Dati in tabella" pattern */
+.tab-group {
+  display: inline-flex;
+  gap: 2px;
+  background: var(--bg);
+  border: 1px solid var(--border-md);
+  border-radius: var(--r-l);
+  padding: 3px;
+}
+.tab-pill {
+  padding: 6px 16px; border-radius: var(--r-m);
+  font-size: 13px; font-weight: 500;
+  color: var(--text-2); transition: all 0.15s;
+  cursor: pointer;
+}
+.tab-pill.active { background: var(--violet); color: white; font-weight: 600; }
+.tab-pill:not(.active):hover { background: var(--violet-light); color: var(--violet); }

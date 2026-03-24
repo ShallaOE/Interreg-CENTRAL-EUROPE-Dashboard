@@ -1,0 +1,94 @@
+.wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-l);
+  padding: 20px;
+  box-shadow: var(--shadow-s);
+}
+
+.chart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* EU27 vertical dashed reference */
+.euLine {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 1px;
+  border-left: 1.5px dashed var(--violet);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.euLabel {
+  position: absolute;
+  top: -18px;
+  left: 4px;
+  font-size: 10px;
+  color: var(--violet);
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 4px;
+  border-radius: var(--r-s);
+  cursor: pointer;
+  transition: background 0.1s;
+  min-height: 22px;
+}
+
+.row:hover { background: var(--violet-light); }
+.rowFocus  { background: var(--violet-light); }
+
+.rowLabel {
+  font-size: 11px;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  padding-right: 6px;
+}
+
+.code { font-family: var(--font-mono); color: var(--text); font-weight: 600; }
+.name { color: var(--text-2); }
+
+.barArea {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.bar {
+  height: 14px;
+  border-radius: 2px;
+  min-width: 2px;
+  transition: width 0.3s ease;
+}
+
+.barVal {
+  font-size: 10px;
+  color: var(--text-2);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+}
+
+.foot {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text-3);
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
