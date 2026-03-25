@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 // e.g. repo is github.com/yourname/interreg-dashboard → base: '/interreg-dashboard/'
 export default defineConfig({
   plugins: [react()],
-  base: '/interreg-dashboard/',
+  base: '/Interreg-CENTRAL-EUROPE-Dashboard/',
 })

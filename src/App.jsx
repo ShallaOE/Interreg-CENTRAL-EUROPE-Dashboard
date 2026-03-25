@@ -25,7 +25,7 @@ export default function App() {
 
           {/* Page title — Civqa pattern */}
           <div className={styles.pageHead}>
-            <h1 className={styles.pageTitle}>Interreg Dashboard</h1>
+            <h1 className={styles.pageTitle}>Interreg CENTRAL EUROPE Dashboard</h1>
             <p className={styles.pageDesc}>
               Regional unemployment rates · Eurostat data · Central &amp; Eastern Europe ·{' '}
               {state.filtered.length} regions · {state.activeCountries.length} countries

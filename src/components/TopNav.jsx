@@ -8,7 +8,7 @@ export default function TopNav({ selectedYear, regionCount }) {
         <span className={styles.sep}>›</span>
         <span className={styles.crumbCurrent}>Indicators</span>
         <span className={styles.sep}>›</span>
-        <span className={styles.crumbPage}>Interreg Dashboard</span>
+        <span className={styles.crumbPage}>Interreg CENTRAL EUROPE Dashboard</span>
       </div>
       <div className={styles.search}>
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none">

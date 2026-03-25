@@ -14,7 +14,7 @@ const MAP_W=580, MAP_H=430
 let _geo=null
 async function loadGeo(){
   if(_geo)return _geo
-  const b='/interreg-dashboard'
+  const b='/Interreg-CENTRAL-EUROPE-Dashboard'
   const[n,c]=await Promise.all([fetch(`${b}/nuts2_ce.geojson`).then(r=>r.json()),fetch(`${b}/eu_countries.geojson`).then(r=>r.json())])
   n.features=n.features.filter(f=>PROG.has(f.properties.NUTS_ID))
   const proj=geoMercator().fitExtent([[16,16],[MAP_W-36,MAP_H-16]],n)

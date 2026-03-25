@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <span>
-        <strong>OpenEconomics</strong> · Interreg Central Europe · Labour Market Monitor
+        <strong>OpenEconomics</strong> · Interreg CENTRAL EUROPE · Labour Market Monitor
       </span>
       <span>
         Source: Eurostat · lfst_r_lfu3rt · NUTS 2 · Annual 2015–2024 · Updated Jan 2025

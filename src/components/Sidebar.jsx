@@ -27,8 +27,8 @@ export default function Sidebar({ state }) {
       <div className={styles.logoArea}>
         <div className={styles.logoMark}>OE</div>
         <div>
-          <div className={styles.logoName}>Interreg</div>
-          <div className={styles.logoSub}>CE Dashboard</div>
+          <div className={styles.logoName}>Interreg CENTRAL EUROPE</div>
+          <div className={styles.logoSub}>Dashboard</div>
         </div>
       </div>
 
