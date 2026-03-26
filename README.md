@@ -2,215 +2,247 @@
 
 **OpenEconomics · 2026**
 
-A fully web-based, open-access interactive dashboard supporting the territorial analysis and strategy design process for the **Interreg Central Europe 2028–2034** programme. Developed by OpenEconomics as part of the technical offer submitted in consortium with T33 Srl.
+An open-access interactive dashboard for the territorial monitoring of the **Interreg Central Europe** programme area. Built by [OpenEconomics](https://openeconomics.net) to support evidence-based regional analysis across the 9 participating countries and 81 NUTS2 regions.
 
-🔗 **Live dashboard:** https://RS-OpenEconomics.github.io/Interreg-CENTRAL-EUROPE-Dashboard/
-
----
-
-## Vision & Purpose
-
-This dashboard is not a proof of concept. It is the foundation of the **official analytical and monitoring tool** for the Interreg CE 2028–34 strategy-building process. It is designed to:
-
-- Transform static territorial analysis into an **interactive, explorable digital environment** accessible to all programme stakeholders without technical expertise
-- Support **evidence-based dialogue** during Working Group CE28+ meetings and strategy consensus-building workshops
-- Provide a **living reference tool** for the programme beyond the duration of the contract, communicating the territorial rationale to project promoters, national authorities and the European Commission
-- Scale progressively from the current **unemployment rate prototype** to a **full multi-indicator, multi-thematic platform** covering all territorial dimensions of the TNCOOP fiche
+🔗 **Live:** https://RS-OpenEconomics.github.io/Interreg-CENTRAL-EUROPE-Dashboard/
 
 ---
 
-## Current Status
+## What it does
 
-| Component | Status |
-|---|---|
-| Choropleth map — real NUTS2 boundaries (Eurostat GISCO) | ✅ Live |
-| Year slider 2015–2024 | ✅ Live |
-| Country filter + Focus region (multi-select) | ✅ Live |
-| KPI strip (Regional avg, Highest, Lowest, EU27) | ✅ Live |
-| Trend over time (country averages + EU27 + selected regions) | ✅ Live |
-| Regional ranking chart (All / Top 20 / Bottom 20) | ✅ Live |
-| Full sortable data table with search | ✅ Live |
-| Indicator: Unemployment rate (Eurostat lfst_r_lfu3rt) | ✅ Live |
-| Multi-indicator / thematic sections | 🔜 Planned — v2 |
-| Stakeholder survey integration | 🔜 Planned — post summer 2026 |
-| Ukrainian oblasts extension | 🔜 Planned — subject to data availability |
+Transforms Eurostat regional statistics into an interactive, explorable environment accessible to all programme stakeholders — no technical background required.
+
+- **Choropleth map** — real NUTS2 boundaries from Eurostat GISCO, coloured by indicator value
+- **Year slider** — annual data 2015–2024, all panels update simultaneously
+- **Country & region filters** — multi-select with focus region highlighting
+- **KPI strip** — programme area average, highest/lowest region, EU27 benchmark
+- **Trend chart** — country averages, EU27 reference line, selected region overlay
+- **Regional ranking** — all 81 regions sorted by value with year-on-year change
+- **Data table** — full sortable, searchable dataset with complete time series
 
 ---
 
-## Planned Development Roadmap
+## Current indicator
 
-### v2 — Multi-indicator platform (delivery: interim report, October 2026)
-Full thematic structure aligned with the TNCOOP fiche for CE, including:
+| Indicator | Source | Geography | Period |
+|---|---|---|---|
+| Unemployment rate (%) | Eurostat · lfst_r_lfu3rt | NUTS 2 · 81 regions | 2015–2024 |
 
-| Thematic Area | Example Indicators |
-|---|---|
-| Demography & Geography | Population density, median age, population change |
-| Innovation, Research & SMEs | Regional Innovation Scoreboard, R&D expenditure (% GDP) |
-| Environment & Climate Change | Renewable energy share, PM2.5, flood risk index |
-| Digital Connectivity & Transport | Broadband access, proximity to major road network |
-| Sustainable Regional Development | GDP per capita (PPS), unemployment, NEET rate, AROPE |
-| Cultural Heritage & Tourism | Tourism intensity, employment in cultural sectors |
-| Housing | Residential buying and renting prices (€/m²) |
-| Quality of Government | EQI, travel time to hospital / secondary school |
-
-### v3 — Survey integration (delivery: post-consultation, September 2026)
-After the stakeholder consultation (June–August 2026), georeferenced survey responses will be integrated as an additional data layer. This will enable:
-- Cross-referencing of **territorial challenges** (statistical analysis) with **cooperation needs** (stakeholder survey) at NUTS2 level
-- Identification of "cooperation niches" as required under Task 2
-- A dedicated Survey Dashboard section with: response overview map, thematic breakdown by region, challenges × needs matrix
-
-### v4 — Geographic extension to Ukraine (conditional)
-Subject to data availability and methodological comparability with Eurostat, coverage will extend to **western Ukrainian oblasts** bordering the CE programme area, drawing on the State Statistics Service of Ukraine (stat.gov.ua) and Eurostat where applicable. Assessment will be done indicator by indicator.
+Additional thematic indicators are in development.
 
 ---
 
-## Accessibility — WCAG 2.1 AA Compliance
+## Roadmap
 
-This dashboard is committed to meeting **WCAG 2.1 Level AA** accessibility standards. All development must respect the following requirements:
+| Version | Description | Status |
+|---|---|---|
+| v1 | Unemployment rate prototype — map, trend, ranking, table | ✅ Live |
+| v2 | Multi-indicator platform — demography, innovation, environment, connectivity, labour market, cultural heritage, housing, governance | 🔜 Planned |
+| v3 | Stakeholder survey integration — georeferenced consultation results overlaid with territorial indicators | 🔜 Planned |
+| v4 | Geographic extension to Ukrainian oblasts bordering the programme area, subject to data availability | 🔜 Conditional |
+
+---
+
+## Design System
+
+This project implements the **OpenEconomics Design System 2.0** (Figma file key: `ULFrjRJzopTyLKczdJLJkn`, extracted 13/03/2026).
+
+### Fonts
+
+| Token | Value | Usage |
+|---|---|---|
+| `--font-family-0` | `'Atkinson Hyperlegible Mono'` | Numbers, codes, data values |
+| `--font-family-1` | `'Atkinson Hyperlegible Next'` | All body and UI text |
+| `--font-family-2` | `'Hedvig Letters Serif'` | Editorial / display headings |
+
+Atkinson Hyperlegible is specifically designed for accessibility — optimised for users with low vision and dyslexia.
+
+### Typography scale
+
+| Style | Size | Weight | Line height | Usage |
+|---|---|---|---|---|
+| Heading Desktop H1 | 32px | 700 | 35.2px | Page titles |
+| Heading Desktop H2 | 28px | 600 | 30.8px | Section titles |
+| Heading Desktop H3 | 24px | 600 | 26.4px | Card titles |
+| Heading Desktop H4 | 20px | 500 | 22px | Sub-section labels |
+| Heading Desktop H5 | 18px | 500 | 19.8px | Component labels |
+| Heading Desktop H6 | 16px | 500 | 19.2px | Small labels |
+| Body Text L | 24px | 400 | 31.2px | Lead paragraphs |
+| Body Text M | 18px | 400 | 23.4px | Standard body |
+| Body Text S | 16px | 400 | 20.8px | Secondary body |
+| Caption XS | 14px | 400 | 18.2px | Captions, metadata |
+| Caption XXS | 12px | 400 | 15.6px | Fine print, footnotes |
+| Number Text XL | 32px | 400–700 | 41.6px | KPI values |
+| Number Text L | 24px | 400–700 | 31.2px | Chart values |
+| Number Text M | 18px | 400–700 | 23.4px | Table numbers |
+| Number Text S | 16px | 400–700 | 20.8px | Small data labels |
+| Number Text XS | 14px | 400–700 | 18.2px | Axis ticks |
+
+### Shadows
+
+| Token | Value | Usage |
+|---|---|---|
+| `--shadow-s` | `0px 4px 4px 0px rgba(0,0,0,0.15)` | Cards, tooltips, badges |
+| `--shadow-m` | `0px 8px 16px 0px rgba(0,0,0,0.15)` | Panels, dropdowns, interactive cards |
+| `--shadow-l` | `0px 16px 48px 0px rgba(0,0,0,0.15)` | Modals, floating panels, elevated layers |
+
+### Colour tokens (dashboard implementation)
+
+```css
+/* Brand */
+--violet:        #5B4FCF;   /* primary — buttons, active states, section dividers */
+--violet-dark:   #3D2B8E;   /* sidebar background, deep accents */
+--violet-light:  #EEF0FD;   /* backgrounds, hover states, badges */
+--violet-border: #C5BFEE;   /* borders on violet elements */
+
+/* Surfaces */
+--bg:            #F5F4F0;   /* page background */
+--surface:       #FFFFFF;   /* cards, panels */
+--surface-2:     #FAFAF8;   /* subtle card backgrounds */
+
+/* Text */
+--text:          #111110;
+--text-2:        rgba(17,17,16,0.55);
+--text-3:        rgba(17,17,16,0.35);
+
+/* Borders */
+--border:        rgba(17,17,16,0.08);
+--border-md:     rgba(17,17,16,0.15);
+
+/* Status */
+--green:         #15803D;   --green-bg:  #DCFCE7;
+--red:           #B91C1C;   --red-bg:    #FEE2E2;
+--amber:         #B45309;   --amber-bg:  #FEF3C7;
+```
+
+### Choropleth colour scale
+
+Green = low (positive) → Red = high (critical). Legend always shows actual min/max values of the current dataset.
+
+```
+0%  → #4CAF50
+2%  → #81C784
+4%  → #FFF176
+6%  → #FFB74D
+8%  → #EF5350
+11% → #B71C1C
+```
+
+---
+
+## Accessibility — WCAG 2.1 AA
+
+This project targets **WCAG 2.1 Level AA** compliance. All contributions must respect the following requirements.
 
 ### Colour & Contrast
-- All text must meet a minimum contrast ratio of **4.5:1** against its background (AA standard)
-- Large text (18px+ or 14px+ bold) must meet **3:1** minimum contrast
-- The choropleth colour scale must never rely on colour alone to convey meaning — values must also be readable via tooltips and the data table
-- Do not use red/green as the only distinguishing colours without additional cues (pattern, label, icon)
+- Body text: minimum **4.5:1** contrast ratio against background
+- Large text (18px+ regular or 14px+ bold): minimum **3:1**
+- The choropleth scale is never the sole means of conveying data — values are always accessible via tooltips, legend, and data table
+- Red/green distinctions include supplementary cues (numeric labels, icons)
 
 ### Keyboard Navigation
-- All interactive elements (filters, map regions, table rows, chart controls) must be fully operable via keyboard
-- Focus order must follow a logical reading order
-- Visible focus indicators must be present on all focusable elements (`outline` must never be set to `none` without a replacement)
+- All interactive elements fully operable via keyboard (Tab, Enter, Arrow keys, Escape)
+- Logical, predictable focus order throughout
+- Visible focus indicators on all focusable elements — `outline: none` without a visible replacement is not permitted
 
-### Screen Readers & Semantic HTML
-- All images and SVG elements must have descriptive `aria-label` or `title` attributes
-- The choropleth map SVG must include `role="img"` and `aria-label` describing the current state
-- Form controls (sliders, selects, checkboxes) must have associated `<label>` elements
-- Data tables must use proper `<th>` with `scope` attributes
-- Page sections must use semantic landmarks (`<header>`, `<main>`, `<nav>`, `<aside>`, `<footer>`)
+### Screen Readers & Semantic Markup
+- All SVG map elements include `role="img"` and descriptive `aria-label`
+- Form controls have associated `<label>` elements
+- Data tables use `<th scope="col|row">` throughout
+- Page uses semantic landmarks: `<header>`, `<main>`, `<nav>`, `<aside>`, `<footer>`
+- Dynamic content updates announced via `aria-live` regions
 
-### Text & Typography
-- Atkinson Hyperlegible is the primary font — it is specifically designed for legibility for users with low vision and dyslexia
+### Typography & Zoom
 - Minimum body font size: 14px
-- Text must remain readable when browser zoom is set to 200%
-- Line height must be at least 1.5× the font size for body text
+- Page fully usable at 200% browser zoom
+- Line height minimum 1.5× font size for body text
+- No text rendered as images
 
 ### Interactive Components
-- All tooltip information must also be available in a non-hover format (keyboard accessible)
-- Sliders must expose current value to assistive technologies via `aria-valuenow`, `aria-valuemin`, `aria-valuemax`
-- Loading states must be communicated via `aria-live` regions
-- Error states must be programmatically associated with their controls
+- Sliders expose `aria-valuenow`, `aria-valuemin`, `aria-valuemax`, `aria-label`
+- Tooltip content accessible via keyboard focus, not hover-only
+- All chart data available in the sortable data table as a non-visual alternative
 
-### Testing Protocol
-Before each release, run:
+### Testing
+
 ```bash
-# Install axe-core CLI
+# Automated audit — run before each deploy
 npm install -g @axe-core/cli
-
-# Run accessibility audit
 axe https://RS-OpenEconomics.github.io/Interreg-CENTRAL-EUROPE-Dashboard/ --tags wcag2aa
 ```
-Also test manually with:
-- **Keyboard only** (Tab, Enter, Arrow keys, Escape)
-- **Screen reader**: NVDA (Windows) or VoiceOver (Mac/iOS)
-- **Browser zoom**: 200% and 400%
-- **High contrast mode**: Windows High Contrast / forced-colors
+
+Manual checklist before each release:
+- [ ] Full keyboard-only navigation (no mouse)
+- [ ] Screen reader: NVDA (Windows) or VoiceOver (Mac/iOS)
+- [ ] Browser zoom at 200% and 400%
+- [ ] Windows High Contrast / `forced-colors` mode
+- [ ] Colour blindness simulation (Deuteranopia, Protanopia)
 
 ---
 
-## Tech Stack
+## Tech stack
 
-| Layer | Technology |
-|---|---|
-| Framework | React 18 + Vite 5 |
-| Charts | Recharts |
-| Maps | D3-geo + Eurostat GISCO GeoJSON |
-| Styling | CSS Modules + OE Design System tokens |
-| Font | Atkinson Hyperlegible Next (Google Fonts) |
-| Deploy | GitHub Pages via gh-pages |
-| Data | Eurostat REST API / static JSON |
+| Layer | Technology | Version |
+|---|---|---|
+| Framework | React | 18.3 |
+| Build tool | Vite | 5.3 |
+| Charts | Recharts | 2.12 |
+| Map projection | D3-geo | 3.x |
+| Map boundaries | Eurostat GISCO GeoJSON | 2021 edition |
+| Styling | CSS Modules | — |
+| Deploy | gh-pages | 6.x |
 
 ---
 
-## Project Structure
+## Project structure
 
 ```
 src/
 ├── data/
 │   └── data.js              ← NUTS2 regions + Eurostat time series
 ├── hooks/
-│   └── useAppState.js       ← global state (year, countries, focus regions)
+│   └── useAppState.js       ← global state: year, countries, focus regions
 ├── components/
-│   ├── Sidebar.jsx          ← navigation + filters
-│   ├── TopNav.jsx           ← breadcrumb + search
+│   ├── Sidebar.jsx          ← navigation + filter controls
+│   ├── TopNav.jsx           ← breadcrumb + search bar
 │   ├── KpiStrip.jsx         ← headline KPI cards
-│   ├── MapSection.jsx       ← choropleth map (D3) + trend chart
+│   ├── MapSection.jsx       ← D3 choropleth map + trend chart
 │   ├── RankingChart.jsx     ← regional ranking bar chart
-│   ├── DataTable.jsx        ← full sortable data table
+│   ├── DataTable.jsx        ← sortable, searchable data table
 │   └── Footer.jsx
-├── App.jsx                  ← layout orchestration
+├── App.jsx
 └── index.css                ← OE Design System tokens
 public/
-├── nuts2_ce.geojson         ← NUTS2 boundaries (Eurostat GISCO, 2021)
-└── eu_countries.geojson     ← EU country outlines (background layer)
+├── nuts2_ce.geojson         ← NUTS2 boundaries (Eurostat GISCO, LEVL_2, 20M, 2021)
+└── eu_countries.geojson     ← EU country outlines (NUTS LEVL_0)
 ```
 
 ---
 
-## Design System
-
-Based on the **OpenEconomics Design System 2.0** (Figma file: `ULFrjRJzopTyLKczdJLJkn`).
-
-Key tokens:
-```css
---violet:       #5B4FCF;   /* primary — buttons, active states */
---violet-dark:  #3D2B8E;   /* sidebar, deep accents */
---violet-light: #EEF0FD;   /* backgrounds, hover states */
---font:         'Atkinson Hyperlegible Next', sans-serif;
---font-mono:    'Atkinson Hyperlegible Mono', monospace;
-```
-
----
-
-## Setup & Development
+## Local development
 
 ```bash
-# Install dependencies
 npm install
-
-# Development server
-npm run dev
-# → http://localhost:5173
-
-# Production build
+npm run dev        # → http://localhost:5173
 npm run build
-
-# Deploy to GitHub Pages
-npm run deploy
-# → https://RS-OpenEconomics.github.io/Interreg-CENTRAL-EUROPE-Dashboard/
+npm run deploy     # → GitHub Pages
 ```
 
-### Updating data
-To update the underlying dataset with a new Excel export from Eurostat:
-1. Replace `Interreg_NUTS2_Unemployment_Rate_.xlsx` in the project root
+### Updating the dataset
+1. Replace the source Excel file in the project root
 2. Run `python3 build_data.py` to regenerate `src/data/data.js`
-3. Run `npm run deploy` to republish
+3. Commit and run `npm run deploy`
 
 ---
 
-## Data Sources
+## Data sources
 
-| Dataset | Source | Coverage |
+| Dataset | Source | Licence |
 |---|---|---|
-| Unemployment rate | Eurostat · lfst_r_lfu3rt | NUTS 2 · 81 regions · 2015–2024 |
-| NUTS2 boundaries | Eurostat GISCO · 2021 edition · 20M scale | 9 programme countries |
-| EU country outlines | Eurostat GISCO · NUTS level 0 | EU27 |
+| Unemployment rate | Eurostat · lfst_r_lfu3rt | [Eurostat reuse policy](https://ec.europa.eu/eurostat/about-us/policies/copyright) |
+| NUTS2 boundaries | Eurostat GISCO · 2021 · 20M | [GISCO reuse policy](https://ec.europa.eu/eurostat/web/gisco) |
+| EU country outlines | Eurostat GISCO · NUTS level 0 | [GISCO reuse policy](https://ec.europa.eu/eurostat/web/gisco) |
 
 ---
 
-## Licence & Attribution
-
-Developed by **OpenEconomics** for the Interreg Central Europe 2028–34 territorial analysis and strategy building support project, in consortium with **T33 Srl**.
-
-Data: © European Union, Eurostat, [reuse authorised](https://ec.europa.eu/eurostat/about-us/policies/copyright).
-
----
-
-*OpenEconomics · [openeconomics.net](https://openeconomics.net) · 2026*
+*Built by [OpenEconomics](https://openeconomics.eu) · 2026*
